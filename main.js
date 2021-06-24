@@ -1,22 +1,8 @@
 
 
 //Start 1 - onlcick functions to change between Mass and Molar
-const navMolar = document.getElementById("nav_1");
-const navMass = document.getElementById("nav_2");
-function goMolar() {
-    navMolar.style.borderBottom = "2px solid white";
-    navMolar.style.borderTop = "2px solid white";
-    navMass.style.borderBottom = "none";
-    navMass.style.borderTop = "none";
-    return false; //this is required to avoid the page reloading to original style after click event  
-};
-function goMass() {
-    navMolar.style.borderBottom = "none";
-    navMolar.style.borderTop = "none";
-    navMass.style.borderBottom = "2px solid white";
-    navMass.style.borderTop = "2px solid white";
-    return false;   
-}
+
+//end 1
 
 
 //Start 2 - to output mass concentration units selected in dropdown boxes

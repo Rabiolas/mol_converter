@@ -50,8 +50,8 @@ h1 {
 }
 
 #nav_2 {
-    border-bottom: none;
-    border-top: none;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
 }
 
 
