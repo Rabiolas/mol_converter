@@ -10,12 +10,9 @@
         <header>
             <h1>CONCENTRATION CONVERTER</h1>
         </header>
-        <nav id="nav_bar">
-            <p>spacer</p>
-        </nav>
         <nav id="nav_content">
-            <a href="./index.html" id="nav_1"><strong>Molar</strong> to Mass</a>
-            <a href="./index.html" id="nav_2"><strong>Mass</strong> to Molar</a>
+            <a href="./index.html" id="nav_1" onclick="return goMolar();"><strong>Molar</strong> to Mass</a> <!--the functions need to be returned in order to stop the page from refreshing after the click event-->  
+            <a href="./index.html" id="nav_2" onclick="return goMass();"><strong>Mass</strong> to Molar</a>
         </nav>
         <div id="mainBox">      
             <div id="inputBox">
