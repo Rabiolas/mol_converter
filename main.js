@@ -1,15 +1,9 @@
-
-
-
-
 //Start 1 - to output mass concentration units selected in dropdown boxes
 const mass = document.getElementById("mass");
 const volume = document.getElementById("volume");
 const toConvertMass = document.getElementById("kgl");
-//const massUnits = document.getElementById("massUnits");
 
 const massChange = () => {
-    //massUnits.innerHTML = mass.value + '/' + volume.value;
     toConvertMass.innerHTML = mass.value + '/' + volume.value;
 };
 
@@ -83,7 +77,6 @@ function calculateMass(formula) { //this function calculates the MW
     return mass;
 };
 
-
 const formula = document.getElementById("formula");
 const molecularWeight = document.getElementById("molweight");
 
@@ -93,40 +86,18 @@ molecularWeight.addEventListener('input', updateInputedMW);
 let calculatedMW = 0;
 function showMass (userInput) {
     calculatedMW = calculateMass(userInput.target.value);
-    molecularWeight.setAttribute("placeholder", calculatedMW.toFixed(3));
+    molecularWeight.setAttribute("placeholder", calculatedMW.toFixed(4));
 };
 
 let inputedMW = 0;
 function updateInputedMW (userInput) {
-    inputedMW = parseInt(userInput.target.value);
+    inputedMW = Number(userInput.target.value);
 };
 
+//end 3
 
 
-
-/* Start 3 - example code on how to convert value from input box to show in outputb box
-const massConversions = {Kg: 1000, g: 1.00, mg: 0.001, ug: 0.000001, ng: 0.000000001, pg: 0.000000000001};
-const volumeConversions = {L: 1.00, mL: 0.001, uL: 0.000001, nL: 0.000000001};
-const molarConversions = {M: 1.0, mM: 1000, uM: 1000000, nM: 1000000000, pM: 1000000000000};
-
-const userInput = document.getElementById("input");
-const output = document.getElementById("output");
-
-userInput.addEventListener('input', convertMass);
-
-function testShow(testInput) {
-    let value = parseInt(testInput.target.value) + inputedMW;
-    output.setAttribute("placeholder", value);
-}
-
-function convertMass (massInput) {
-    let parsedInput = parseInt(massInput.target.value);
-    let molarValue = (parsedInput*massConversions[mass.value]*molarConversions[molar.value])/(inputedMW*volumeConversions[volume.value]);
-    output.setAttribute("placeholder", molarValue.toFixed(3));
-};
-End 3 */
-
-// Start 3.1 - replacing above with on-click
+// Start 4.1 - replacing above with on-click
 const massConversions = {Kg: 1000, g: 1.00, mg: 0.001, ug: 0.000001, ng: 0.000000001, pg: 0.000000000001};
 const volumeConversions = {L: 1.00, mL: 0.001, uL: 0.000001, nL: 0.000000001};
 const molarConversions = {M: 1.0, mM: 1000, uM: 1000000, nM: 1000000000, pM: 1000000000000};
@@ -135,31 +106,42 @@ const output = document.getElementById("output");
 const button = document.getElementById("calculate_button")
 
 
-function convert () {
+function convertFromMass () {
     const userInput = document.getElementById("input").value;
-    //const MWinput = document.getElementById("molweight").value;
-    const parsedInput = parseInt(userInput);
-    //const parsedMW = parseInt(MWinput);
-    //const molarValue = (parsedInput*massConversions[mass.value]*molarConversions[molar.value])/(parsedMW*volumeConversions[volume.value]);
+    const parsedInput = Number(userInput);
     let validMW = "";
     if (!calculatedMW && !inputedMW) {
         alert ("Please define a Molecular Weigth in Step 1")
     } else if (inputedMW) {
         console.log("2nd if");
-        validMW = parseInt(inputedMW);
+        validMW = Number(inputedMW);
     } else {
         console.log("3rd if");
-        validMW = parseInt(calculatedMW);
+        validMW = Number(calculatedMW);
 
     }
     const molarValue = (parsedInput*massConversions[mass.value]*molarConversions[molar.value])/(validMW*volumeConversions[volume.value]);
-    output.setAttribute("placeholder", molarValue.toFixed(3));
+    output.setAttribute("placeholder", molarValue.toFixed(4));
+};
+
+function convertFromMols () {
+    const userInput = document.getElementById("input").value;
+    const parsedInput = Number(userInput);
+    let validMW = "";
+    if (!calculatedMW && !inputedMW) {
+        alert ("Please define a Molecular Weigth in Step 1")
+    } else if (inputedMW) {
+        console.log("2nd if");
+        validMW = Number(inputedMW);
+    } else {
+        console.log("3rd if");
+        validMW = Number(calculatedMW);
+
+    }
+    const massConcentrationValue = (validMW*parsedInput*volumeConversions[volume.value])/(molarConversions[molar.value]*massConversions[mass.value])
+    output.setAttribute("placeholder", massConcentrationValue.toFixed(4));
 }
-
-
-
-
-
+//end 4.1
 
 
 
