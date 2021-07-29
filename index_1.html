@@ -3,6 +3,7 @@
     <head>
         <title>Concentration Converter</title>
         <link href="style.css" type="text/css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu:700" rel="stylesheet">
     </head>
 
@@ -10,12 +11,9 @@
         <header>
             <h1>CONCENTRATION CONVERTER</h1>
         </header>
-        <nav id="nav_bar">
-            <p>spacer</p>
-        </nav>
         <nav id="nav_content">
-            <a href="./index.html" id="nav_1"><strong>Molar</strong> to Mass</a>
-            <a href="./index.html" id="nav_2"><strong>Mass</strong> to Molar</a>
+            <a href="./index_1.html" id="nav_1"><strong>Molar</strong> to Mass</a> 
+            <a href="./index_2.html"><strong>Mass</strong> to Molar</a>
         </nav>
         <div id="mainBox">      
             <div id="inputBox">
@@ -72,7 +70,7 @@
                     <p><input id="output" name="output" type="text" readonly placeholder="0"><span id="M">M</span></p>
                 </div>
             </div>
-            <div id="button_container"><p>>>></p><div onclick="convert()" id="calculate_button">Convert</div><p><<<</p></div>
+            <div id="button_container"><p>>>></p><div onclick="convertFromMass()" id="calculate_button">Convert</div><p><<<</p></div>
         </div>  
         <script src="main.js"></script>
     </body>
