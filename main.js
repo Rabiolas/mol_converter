@@ -129,7 +129,7 @@ function convertFromMols () {
     const parsedInput = Number(userInput);
     let validMW = "";
     if (!calculatedMW && !inputedMW) {
-        alert ("Please define a Molecular Weigth in Step 1")
+        alert ("Please define a Molecular Weight in Step 1")
     } else if (inputedMW) {
         console.log("2nd if");
         validMW = Number(inputedMW);
