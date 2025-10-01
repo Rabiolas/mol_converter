@@ -1,4 +1,3 @@
-
 //Start 1 - to output mass concentration units selected in dropdown boxes
 const mass = document.getElementById("mass");
 const volume = document.getElementById("volume");
@@ -122,27 +121,9 @@ function convertFromMass () {
 
     }
     const molarValue = (parsedInput*massConversions[mass.value]*molarConversions[molar.value])/(validMW*volumeConversions[volume.value]);
-    output.setAttribute("placeholder", molarValue.toFixed(4));
-};
-
-function convertFromMols () {
-    const userInput = document.getElementById("input").value;
-    const parsedInput = Number(userInput);
-    let validMW = "";
-    if (!calculatedMW && !inputedMW) {
-        alert ("Please define a Molecular Weigth in Step 1")
-    } else if (inputedMW) {
-        console.log("2nd if");
-        validMW = Number(inputedMW);
-    } else {
-        console.log("3rd if");
-        validMW = Number(calculatedMW);
-
-    }
-    const massConcentrationValue = (validMW*parsedInput*volumeConversions[volume.value])/(molarConversions[molar.value]*massConversions[mass.value])
-    output.setAttribute("placeholder", massConcentrationValue.toFixed(4));
+    output.setAttribute("placeholder", molarValue.toFixed(3));
 }
-//end 4.1
+
 
 
 
