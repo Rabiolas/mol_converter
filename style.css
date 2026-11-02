@@ -4,8 +4,11 @@
 }
 
 html {
-    background-color: whitesmoke;
+    background:
+        linear-gradient(rgba(245, 245, 245, 0.85), rgba(245, 245, 245, 0.85)),
+        url("background.jpg") center / cover no-repeat fixed;
     font-family: 'Open Sans', Sans-Serif;
+    min-height: 100%;
 }
 
 header {
