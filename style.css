@@ -79,7 +79,7 @@ h1 {
 
 #mainBox {
     display: block;
-    background-color: #E2E7E8;
+    background-color: transparent;
     max-width: 800px;
     margin: 40px auto;
     padding: 30px 20px;
